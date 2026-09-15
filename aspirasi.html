@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Penjaringan Aspirasi</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+
+background:#edf2f7;
+
+}
+
+/* HEADER */
+
+.header{
+
+background:#1565c0;
+color:white;
+padding:18px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
+
+.header h1{
+
+font-size:28px;
+
+}
+
+.header p{
+
+opacity:.9;
+margin-top:6px;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:20px;
+
+}
+
+/* BOX */
+
+.box{
+
+background:white;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+/* STICKY */
+
+.sticky{
+
+position:sticky;
+top:10px;
+z-index:999;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+display:block;
+width:100%;
+text-align:center;
+background:#1976d2;
+color:white;
+padding:16px;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#0d47a1;
+
+}
+
+/* SEARCH */
+
+.search{
+
+width:100%;
+padding:14px;
+margin:15px 0;
+border-radius:10px;
+border:1px solid #dcdcdc;
+font-size:16px;
+
+}
+
+.info{
+
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+font-weight:bold;
+color:#555;
+
+}
+
+/* LIST */
+
+.list{
+
+height:550px;
+overflow-y:auto;
+padding-right:10px;
+
+}
+
+.list::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.list::-webkit-scrollbar-thumb{
+
+background:#1565c0;
+border-radius:20px;
+
+}
+
+.card{
+
+background:#f7f9fc;
+border-left:5px solid #1565c0;
+padding:18px;
+border-radius:10px;
+margin-bottom:15px;
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-2px);
+box-shadow:0 8px 15px rgba(0,0,0,.08);
+
+}
+
+.nama{
+
+font-size:18px;
+font-weight:bold;
+color:#1565c0;
+
+}
+
+.instansi{
+
+margin-top:5px;
+color:#666;
+font-size:14px;
+
+}
+
+.jabatan{
+
+margin-top:3px;
+font-style:italic;
+color:#777;
+
+}
+
+.deskripsi{
+
+margin-top:15px;
+line-height:1.7;
+text-align:justify;
+color:#444;
+
+}
+
+.footer{
+
+text-align:center;
+padding:25px;
+color:#888;
+font-size:14px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.container{
+
+padding:10px;
+
+}
+
+.header h1{
+
+font-size:22px;
+
+}
+
+.sticky{
+
+top:0;
+
+}
+
+.list{
+
+height:calc(100vh - 330px);
+
+}
+
+.nama{
+
+font-size:16px;
+
+}
+
+.deskripsi{
+
+font-size:14px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>Penjaringan Aspirasi Masyarakat</h1>
+
+<p>Penyusunan RTR Kawasan Strategis Nasional Taman Nasional Tanjung Puting</p>
+
+</div>
+
+<div class="container">
+
+<div class="box sticky">
+
+<h2>📢 Sampaikan Aspirasi</h2>
+
+<br>
+
+<a class="btn"
+target="_blank"
+href="https://ee.kobotoolbox.org/x/8fN68Efu">
+
+Sampaikan Aspirasi
+
+</a>
+
+<p style="margin-top:15px;color:#666;line-height:1.7">
+
+Silakan menyampaikan masukan, kritik, saran maupun aspirasi terhadap penyusunan RTR KSN TN Tanjung Puting melalui formulir berikut.
+
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>📝 Aspirasi yang Telah Disampaikan</h2>
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="Cari nama, instansi, jabatan atau isi aspirasi...">
+
+<div class="info">
+
+<div>Total Aspirasi :
+<span id="jumlah"></span>
+
+</div>
+
+</div>
+
+<div class="list" id="list">
+
+<!-- CARD -->
+<div class="card">
+
+    <div class="nama">Juan Kristiawan, ST</div>
+
+    <div class="instansi">DLH Provinsi Kalimantan Tengah</div>
+
+    <div class="jabatan">Pengendali Dampak Lingkungan</div>
+
+    <div class="deskripsi">
+        Mengusulkan penegasan delineasi zona inti, rehabilitasi, dan kawasan penyangga TNTP berbasis data habitat terkini. Selain itu diperlukan penetapan areal preservasi, koridor ekologis satwa, restorasi gambut, penguatan ekowisata, pengembangan agroforestri masyarakat, serta pembentukan Forum Kelola KSN untuk memperkuat koordinasi lintas sektor.
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="nama">Ardian</div>
+
+    <div class="instansi">Taman Nasional Tanjung Puting</div>
+
+    <div class="jabatan">Layanan Umum Operasional</div>
+
+    <div class="deskripsi">
+        Sangat mendukung penyusunan RTR Kawasan Strategis Nasional Taman Nasional Tanjung Puting.
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="nama">Imam Wardany</div>
+
+    <div class="instansi">Dinas Pekerjaan Umum dan Penataan Ruang</div>
+
+    <div class="jabatan">Plt. Kepala Bidang Tata Ruang</div>
+
+    <div class="deskripsi">
+        Penyusunan RTR KSN diharapkan mampu menjaga keseimbangan antara konservasi, kepentingan masyarakat, dan aktivitas ekonomi yang telah berkembang secara legal. Arahan tata ruang perlu lebih operasional sehingga menjadi pedoman yang jelas bagi pemerintah, masyarakat, dan pelaku usaha.
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="nama">Andika Putra Kunigara</div>
+
+    <div class="instansi">Orangutan Foundation UK</div>
+
+    <div class="jabatan">-</div>
+
+    <div class="deskripsi">
+        Mengusulkan agar seluruh sumber data yang digunakan dalam penyusunan RTR KSN dicantumkan secara terbuka. Selain itu diperlukan transparansi proses pembobotan, identifikasi para pemangku kepentingan utama, serta koordinasi yang lebih intensif dengan seluruh pihak terkait.
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="nama">Juan Kristiawan, ST</div>
+
+    <div class="instansi">DLH Provinsi Kalimantan Tengah</div>
+
+    <div class="jabatan">Pedal Ahli Pertama</div>
+
+    <div class="deskripsi">
+        Mengusulkan program prioritas berupa perlindungan habitat orangutan dan satwa kunci, pengendalian deforestasi, restorasi gambut, pengendalian kebakaran hutan, pembangunan Taman Keanekaragaman Hayati, penetapan areal preservasi, perlindungan habitat penyu sisik, monitoring keanekaragaman hayati jangka panjang, pengembangan ekowisata berkelanjutan, hingga penguatan kelembagaan pengelolaan KSN TNTP.
+    </div>
+
+</div>
+
+
+<div class="card">
+
+<div class="nama">Tidak ada nama</div>
+
+<div class="instansi">Orangutan Foundation International</div>
+
+<div class="jabatan">GIS dan Koordinator Lapangan</div>
+
+<div class="deskripsi">
+
+Area penyanggah TNTP atau area preservasi yang berupa hutan produksi seharusnya tetap berupa tutupan hutan karena saat ini banyak dimanfaatkan menjadi kebun kelapa sawit. Kawasan tersebut perlu ditata ulang mengikuti fungsi zona penyanggah.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Sunarto, S.Hut</div>
+
+<div class="instansi">DLH</div>
+
+<div class="jabatan">Kabid Perencanaan Lingkungan Hidup</div>
+
+<div class="deskripsi">
+
+Perlu sosialisasi berkelanjutan mengenai pengelolaan sampah wisata dan penertiban PETI di sekitar kawasan TNTP serta pemberian alternatif pekerjaan bagi masyarakat.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Dadang Edi Rochaedi</div>
+
+<div class="instansi">Direktorat PSDAB</div>
+
+<div class="jabatan">Fungsional PEH Ahli Madya</div>
+
+<div class="deskripsi">
+
+RTR KSN perlu memperkuat keterkaitan dengan RPPLH melalui KLHS agar pemanfaatan ruang tidak melampaui daya dukung dan daya tampung lingkungan.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Rania Hana Kamila</div>
+
+<div class="instansi">KLH/BPLH</div>
+
+<div class="jabatan">Pedal Ahli Pertama</div>
+
+<div class="deskripsi">
+
+PP Nomor 26 Tahun 2025 mengenai RPPLH perlu menjadi salah satu dasar hukum dalam penyusunan RTR KSN.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Sarina Maya Sova</div>
+
+<div class="instansi">DPUPR Provinsi Kalimantan Tengah</div>
+
+<div class="jabatan">JFT Penata Ruang Pertama</div>
+
+<div class="deskripsi">
+
+Perlu sinkronisasi RTR KSN dengan RTRW daerah, kejelasan buffer zone, perlindungan koridor satwa, mitigasi gambut, dan pengembangan pariwisata berkelanjutan.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Dudy Kurniawan</div>
+
+<div class="instansi">Orangutan Foundation International</div>
+
+<div class="jabatan">Manajer Program</div>
+
+<div class="deskripsi">
+
+Kabupaten Kotawaringin Barat telah menetapkan Kawasan Strategis Kabupaten yang meliputi Desa Sekonyer sehingga perlu menjadi pertimbangan dalam penyusunan RTR KSN.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Melia Susana</div>
+
+<div class="instansi">Badan Geologi</div>
+
+<div class="jabatan">Penyelidik Bumi Muda</div>
+
+<div class="deskripsi">
+
+RTR KSN perlu mengakomodasi informasi geologi lingkungan, kerentanan banjir, gambut, abrasi, sedimentasi, air tanah dan pengendalian aktivitas pertambangan.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="nama">Dr. Andre Notohamijoyo</div>
+
+<div class="instansi">Kemenko PMK</div>
+
+<div class="jabatan">Asisten Deputi Pengurangan Risiko Bencana</div>
+
+<div class="deskripsi">
+
+Risiko bencana perlu menjadi bagian utama dalam penyusunan RTR KSN sehingga pembangunan tidak meningkatkan risiko bencana akibat lemahnya implementasi KLHS.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+© 2026 Penjaringan Aspirasi RTR Kawasan Strategis Nasional Taman Nasional Tanjung Puting
+
+</div>
+
+<script>
+
+const search=document.getElementById("search");
+const cards=document.querySelectorAll(".card");
+const jumlah=document.getElementById("jumlah");
+
+jumlah.innerHTML=cards.length;
+
+search.addEventListener("keyup",function(){
+
+let keyword=this.value.toLowerCase();
+
+cards.forEach(card=>{
+
+let isi=card.innerText.toLowerCase();
+
+if(isi.indexOf(keyword)>-1){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
